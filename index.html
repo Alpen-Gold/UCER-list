@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- bootstrap link -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+
+    <!-- link-css -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <!-- icon -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="container py-5">
+      <h1>Ucer list</h1>
+
+      <!-- modal -->
+
+      <!-- Button trigger modal -->
+      <button
+        type="button"
+        class="btn btn-success btn-lg my-3"
+        onclick="openModal('post')"
+      >
+        Add Ucer
+        <i class="fas fa-plus"></i>
+      </button>
+
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">
+                Modal title
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-md-6 my-3">
+                  <input
+                    type="text"
+                    placeholder="name"
+                    class="form-control w-100"
+                    id="name"
+                  />
+                </div>
+
+                <div class="col-md-6 my-3">
+                  <input
+                    type="email"
+                    placeholder="email"
+                    class="form-control w-100"
+                    id="email"
+                  />
+                </div>
+
+                <div class="col-md-6 my-3">
+                  <input
+                    type="text"
+                    placeholder="city"
+                    class="form-control w-100"
+                    id="city"
+                  />
+                </div>
+
+                <div class="col-md-6 my-3">
+                  <input
+                    type="text"
+                    placeholder="street"
+                    class="form-control w-100"
+                    id="street"
+                  />
+                </div>
+
+                <div class="col-md-6 my-3">
+                  <input
+                    type="text"
+                    placeholder="phone"
+                    class="form-control w-100"
+                    id="phone"
+                  />
+                </div>
+
+                <div class="col-md-6 my-3">
+                  <input
+                    type="text"
+                    placeholder="Web-site"
+                    class="form-control w-100"
+                    id="Web-site"
+                  />
+                </div>
+
+                <div class="col-md-6 my-3">
+                  <input
+                    type="text"
+                    placeholder="company"
+                    class="form-control w-100"
+                    id="company"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary"
+                onclick="sevaDate()"
+              >
+                Save
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--  -->
+
+      <div class="text-center" id="loading">
+        <div class="spinner-border text-danger text-center" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+
+      <div class="text-center" id="error">
+        <h1>
+          <i class="fas fa-warning text-danger my-5"></i>
+          Error
+        </h1>
+      </div>
+
+      <table class="table table-hover my-5">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Addres</th>
+            <th>Phone</th>
+            <th>Website</th>
+            <th>Company</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <!-- <tr>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>
+              Citi Address <a href="#"><i class="fas fa-location-arrow"></i></a>
+            </td>
+            <td>1</td>
+            <td><a href="#">web siti</a></td>
+            <td>1</td>
+            <td>
+              <button class="btn btn-primary">
+                <i class="fas fa-edit"></i>
+              </button>
+
+              <button class="btn btn-danger">
+                <i class="fas fa-trash"></i>
+              </button>
+            </td>
+          </tr> -->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ======================================================================== -->
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+      integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- axios -->
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script src="./js/main.js"></script>
+  </body>
+</html>
